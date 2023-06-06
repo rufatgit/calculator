@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unusual Calculator</title>
+    <link rel="icon" href="gui.ico" />
+    <script src="index.js"></script>
+    <style>
+      body {
+        background: linear-gradient(to right, #3f620b, #05afde);
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+      }
+      .container {
+        margin: 20px;
+      }
+
+      .header {
+        font-size: 24px;
+      }
+      .textfield {
+        font-style: italic;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+        width: 300px;
+        padding: 5px;
+      }
+      .result {
+        font-style: italic;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+        width: 150px;
+        padding: 5px;
+      }
+
+      .button {
+        padding: 10px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .color-input {
+        margin-top: 20px;
+      }
+
+      .image {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="header">Unusual Calculator</h1>
+      <input
+        type="text"
+        id="arguments"
+        class="textfield"
+        placeholder="Enter arguments(e.g., 1 2 3)"
+      />
+      <select id="operation">
+        <option value="sum">&sum; Sum</option>
+        <option value="product">&Product; Product</option>
+        <option value="maximum">&gt; Maximum</option>
+        <option value="minimum">&lt; Minimum</option>
+      </select>
+      <button onclick="calculate()" class="button">Launch</button>
+      <br />
+      <!--new line-->
+      <input type="text" id="result" class="textfield" readonly />
+      <br />
+      <button onclick="generateRandom()" class="button">
+        Generate Random Numbers
+      </button>
+      <hr />
+      <!-- Line-->
+      <h3>Change TextField Color:</h3>
+      <input
+        type="color"
+        id="foreground-color"
+        class="color-input"
+        onchange="changeColor('foreground-color')"
+      />
+      <input
+        type="color"
+        id="background-color"
+        class="color-input"
+        onchange="changeColor('background-color')"
+      />
+      <button
+        onclick="save_doc()"
+        style="font-weight: initial; background-color: pink"
+        id="1"
+      >
+        Save
+      </button>
+    </div>
+    <img src="calc.png" class="image" />
+  </body>
+</html>
